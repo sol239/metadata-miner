@@ -1,0 +1,61 @@
+name: test-database-containers
+
+services:
+  oracle:
+    image: gvenzl/oracle-free:23-slim
+    container_name: oracle
+    environment:
+      ORACLE_PASSWORD: ${DB_PASSWORD}
+      APP_USER: developer
+      APP_USER_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "127.0.0.1:1521:1521"
+    volumes:
+      - oracle_data:/opt/oracle/oradata
+    restart: unless-stopped
+
+  mssql:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: mssql
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: Developer
+      MSSQL_SA_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "127.0.0.1:1433:1433"
+    volumes:
+      - mssql_data:/var/opt/mssql
+    restart: unless-stopped
+
+  mysql:
+    image: mysql:8.4
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: development
+      MYSQL_USER: developer
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "127.0.0.1:3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    restart: unless-stopped
+
+  postgres:
+    image: postgres:17
+    container_name: postgres
+    environment:
+      POSTGRES_USER: developer
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: development
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+volumes:
+  oracle_data:
+  mssql_data:
+  mysql_data:
+  postgres_data:
