@@ -1,0 +1,8 @@
+{
+    "include": ["core", "tests", "main.py", "generate_datagrip.py"],
+    "exclude": [".venv", "**/__pycache__"],
+    "venvPath": ".",
+    "venv": ".venv",
+    "pythonVersion": "3.12",
+    "typeCheckingMode": "standard"
+}
