@@ -1,0 +1,5 @@
+{
+  "OPENMETADATA_URL": "http://localhost:8585/api",
+  "OPENMETADATA_JWT_TOKEN": "YOUR_JWT_TOKEN",
+  "METADATA_MINER_ORACLE_URL": "oracle+oracledb://USER:PASSWORD@localhost:1521/?service_name=FREEPDB1"
+}

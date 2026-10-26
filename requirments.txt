@@ -1,0 +1,9 @@
+jupyterlab
+notebook
+ipykernel
+pandas
+sqlalchemy>=1.4.54,<2
+oracledb
+pydantic>=2,<3
+pytest>=8,<10
+openmetadata-ingestion==1.12.6.0
