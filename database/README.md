@@ -142,3 +142,13 @@ COMMIT;
 ```
 
 If you wanted to undo the entire transaction instead, you would use `ROLLBACK;` before committing.
+
+--- 
+
+## Business Narrative - Library Lending System
+
+We need a system to manage books, library members, and borrowing activity. Every book has a title, ISBN, publication year, and publisher. A book may have multiple authors, and an author may write several books. We own multiple physical copies of some books, and each copy has its own barcode and availability status.
+
+Members register with their name, email, and registration date. A member can borrow multiple copies over time, but each physical copy can only be on one active loan at a time. For every loan, we need to record the borrowing date, due date, and actual return date, which may initially be unknown.
+
+We want reports on overdue loans, popular books, and borrowing activity by month.

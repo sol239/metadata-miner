@@ -1,10 +1,9 @@
-
 #!/usr/bin/env bash
 set -euo pipefail
 
 # Resolve script directory
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-COMPOSE_FILE="$SCRIPT_DIR/docker-compose.yml"
+COMPOSE_FILE="$SCRIPT_DIR/database/docker-compose.yml"
 SQLITE_FILE="$SCRIPT_DIR/db.sqlite"
 
 # Display help

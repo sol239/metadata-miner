@@ -1,0 +1,1 @@
+-- 00_drop_objects.sql
